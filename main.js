@@ -1,7 +1,20 @@
 $(document).ready(function() {
-//   Facciamo una chiamata ajax all'api di boolean al seguente indirizzo.
-// https://flynn.boolean.careers/exercises/api/array/music
-// L'api ci restituirà decina di dischi musicali che dovremo stampare a schermo con Handlebars.
+//   Facciamo una chiamata ajax all'api di boolean.
+$.ajax({
+
+  "url": "https://flynn.boolean.careers/exercises/api/array/music",
+  "method": "GET",
+  "success": function (data, stato) {
+    console.log(data.response);
+    // L'api ci restituirà decina di dischi musicali che dovremo stampare a schermo con Handlebars.
+
+  },
+  "error": function (richiesta, stato, errori) {
+  alert("E' avvenuto un errore. " + errore);
+  }
+  });
+
+//
 // Concentratevi sulla parte JS per la grafica potrete utilizzare il layout che troverete al seguente link
 // https://bitbucket.org/booleancareers/ex-dischi-musicali-layout/downloads/
 // Bonus:
