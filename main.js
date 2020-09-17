@@ -13,9 +13,24 @@ $.ajax({
     for (var i = 0; i < listaDischi.length; i++) {
       var html = template(listaDischi[i]);
       $("#cd-player").append(html);
-      // console.log(listaDischi[i].genre);
-      var choseMusic = choseGenre(listaDischi[i].genre);
-    }
+    };
+    $("#genre option").click(
+      function() {
+        var genreOption = $(this).val();
+        console.log(genreOption);
+        var cds = $(".cd").each(
+          function() {
+            var attribute = $(this).attr("data-genre");
+            if (attribute != genreOption) {
+              $(this).hide();
+            } else {
+              $(this).show();
+            }
+          }
+        )
+
+      }
+    );
   },
   "error": function (richiesta, stato, errori) {
   alert("E' avvenuto un errore. " + errore);
@@ -28,19 +43,7 @@ $.ajax({
 // Creare una select con i seguenti generi: pop, rock, metal e jazz.
 // In base a cosa scegliamo nella select vedremo solo i corrispondenti cd.
 function choseGenre(genre) {
-  $("#genre option").click(
-    function() {
-      var genreOption = $(this).val();
-      $(".cd").each(
-        function() {
-          if ($(this).val() != genreOption) {
-            $(this).hide();
-          }
-        }
-      )
 
-    }
-  )
 
 }
 
