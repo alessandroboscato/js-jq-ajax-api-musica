@@ -20,17 +20,21 @@ $.ajax({
     $("#genre option").click(
       function() {
         var genreOption = $(this).val();
-        console.log(genreOption);
-        var cds = $(".cd").each(
-          function() {
-            var attribute = $(this).attr("data-genre");
-            if (attribute != genreOption) {
-              $(this).hide();
-            } else {
-              $(this).show();
+        if (genreOption != "All") {
+          var cds = $(".cd").each(
+            function() {
+              var attribute = $(this).attr("data-genre");
+              if (attribute != genreOption) {
+                $(this).hide();
+              } else {
+                $(this).show();
+              }
             }
-          }
-        )
+          )
+        } else {
+          $(".cd").show();
+        }
+
 
       }
     );
