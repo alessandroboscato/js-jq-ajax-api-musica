@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    width: 1070px;
+    max-width: 1070px;
     height: 100%;
     margin: 0 auto;
 }
@@ -25,6 +25,10 @@ header img {
     height: 50px;
     margin-top: 10px;
     vertical-align: middle;
+}
+
+label {
+  color: #fff;
 }
 
 .cds-container {
@@ -66,4 +70,29 @@ header img {
 
 .cd span.year {
     color: grey;
+}
+
+@media screen and (max-width: 1042px) {
+  .container {
+    max-width: 900px;
+  }
+
+  .cd {
+    flex-basis: 228px;
+  }
+}
+
+@media screen and (max-width: 814px) {
+  .container {
+    max-width: 600px;
+  }
+
+  .cd {
+    flex-basis: 100%;
+  }
+  }
+}
+
+@media screen and (max-width: 576px) {
+
 }

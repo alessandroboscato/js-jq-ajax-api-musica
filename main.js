@@ -14,6 +14,9 @@ $.ajax({
       var html = template(listaDischi[i]);
       $("#cd-player").append(html);
     };
+    // Bonus:
+    // Creare una select con i seguenti generi: pop, rock, metal e jazz.
+    // In base a cosa scegliamo nella select vedremo solo i corrispondenti cd.
     $("#genre option").click(
       function() {
         var genreOption = $(this).val();
@@ -39,12 +42,7 @@ $.ajax({
 
 
 
-// Bonus:
-// Creare una select con i seguenti generi: pop, rock, metal e jazz.
-// In base a cosa scegliamo nella select vedremo solo i corrispondenti cd.
-function choseGenre(genre) {
 
 
-}
 
 });
